@@ -1,0 +1,142 @@
+{
+  "artifacts": [],
+  "command": "main",
+  "experiment": {
+    "base_dir": "/home/levon/MyProjects/Paper_Reading/SemanticSegmentation/BiSeNet-V1",
+    "dependencies": [
+      "numpy==1.18.5",
+      "sacred==0.8.1",
+      "tensorflow-gpu==1.14.0"
+    ],
+    "mainfile": "train.py",
+    "name": "bisenet-v2",
+    "repositories": [
+      {
+        "commit": "2a3d86ea451d50b116be2c86095cfa1048be34d7",
+        "dirty": false,
+        "url": "https://github.com/lev1khachatryan/Paper_Reading.git"
+      },
+      {
+        "commit": "2a3d86ea451d50b116be2c86095cfa1048be34d7",
+        "dirty": false,
+        "url": "https://github.com/lev1khachatryan/Paper_Reading.git"
+      },
+      {
+        "commit": "2a3d86ea451d50b116be2c86095cfa1048be34d7",
+        "dirty": false,
+        "url": "https://github.com/lev1khachatryan/Paper_Reading.git"
+      },
+      {
+        "commit": "2a3d86ea451d50b116be2c86095cfa1048be34d7",
+        "dirty": false,
+        "url": "https://github.com/lev1khachatryan/Paper_Reading.git"
+      },
+      {
+        "commit": "2a3d86ea451d50b116be2c86095cfa1048be34d7",
+        "dirty": false,
+        "url": "https://github.com/lev1khachatryan/Paper_Reading.git"
+      },
+      {
+        "commit": "2a3d86ea451d50b116be2c86095cfa1048be34d7",
+        "dirty": false,
+        "url": "https://github.com/lev1khachatryan/Paper_Reading.git"
+      }
+    ],
+    "sources": [
+      [
+        "configuration.py",
+        "_sources/configuration_bbc54a1a23473406fdb54479dbdc005c.py"
+      ],
+      [
+        "models/__init__.py",
+        "_sources/__init___d41d8cd98f00b204e9800998ecf8427e.py"
+      ],
+      [
+        "models/bisenet.py",
+        "_sources/bisenet_cade4424ac3b85030a01ce36b629ff1d.py"
+      ],
+      [
+        "train.py",
+        "_sources/train_f51e87bb4c321cfc254e7fa4ecb7d1ca.py"
+      ],
+      [
+        "utils/__init__.py",
+        "_sources/__init___d41d8cd98f00b204e9800998ecf8427e.py"
+      ],
+      [
+        "utils/misc_utils.py",
+        "_sources/misc_utils_5c23b9776c7ad6c2b61497e4efdf3d47.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/client/session.py\", line 1356, in _do_call\n    return fn(*args)\n",
+    "  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/client/session.py\", line 1341, in _run_fn\n    options, feed_dict, fetch_list, target_list, run_metadata)\n",
+    "  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/client/session.py\", line 1429, in _call_tf_sessionrun\n    run_metadata)\n",
+    "tensorflow.python.framework.errors_impl.UnknownError: 2 root error(s) found.\n  (0) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.\n\t [[{{node train/xception39/pool1/Conv2D}}]]\n\t [[OptimizeLoss/control_dependency_1/_57]]\n  (1) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.\n\t [[{{node train/xception39/pool1/Conv2D}}]]\n0 successful operations.\n0 derived errors ignored.\n",
+    "\nDuring handling of the above exception, another exception occurred:\n\n",
+    "Traceback (most recent call last):\n",
+    "  File \"/home/levon/.local/lib/python3.6/site-packages/sacred/config/captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"train.py\", line 174, in main\n    _, predict_loss, loss = sess.run([train_op, model.loss, model.total_loss])\n",
+    "  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/client/session.py\", line 950, in run\n    run_metadata_ptr)\n",
+    "  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/client/session.py\", line 1173, in _run\n    feed_dict_tensor, options, run_metadata)\n",
+    "  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/client/session.py\", line 1350, in _do_run\n    run_metadata)\n",
+    "  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/client/session.py\", line 1370, in _do_call\n    raise type(e)(node_def, op, message)\n",
+    "tensorflow.python.framework.errors_impl.UnknownError: 2 root error(s) found.\n  (0) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.\n\t [[node train/xception39/pool1/Conv2D (defined at /home/levon/MyProjects/Paper_Reading/SemanticSegmentation/BiSeNet-V1/frontends/xception.py:77) ]]\n\t [[OptimizeLoss/control_dependency_1/_57]]\n  (1) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.\n\t [[node train/xception39/pool1/Conv2D (defined at /home/levon/MyProjects/Paper_Reading/SemanticSegmentation/BiSeNet-V1/frontends/xception.py:77) ]]\n0 successful operations.\n0 derived errors ignored.\n\nErrors may have originated from an input operation.\nInput Source operations connected to node train/xception39/pool1/Conv2D:\n train/IteratorGetNext (defined at /home/levon/MyProjects/Paper_Reading/SemanticSegmentation/BiSeNet-V1/Dataset/dataset.py:240)\n\nInput Source operations connected to node train/xception39/pool1/Conv2D:\n train/IteratorGetNext (defined at /home/levon/MyProjects/Paper_Reading/SemanticSegmentation/BiSeNet-V1/Dataset/dataset.py:240)\n\nOriginal stack trace for 'train/xception39/pool1/Conv2D':\n  File \"train.py\", line 92, in <module>\n    @ex.automain\n  File \"/home/levon/.local/lib/python3.6/site-packages/sacred/experiment.py\", line 190, in automain\n    self.run_commandline()\n  File \"/home/levon/.local/lib/python3.6/site-packages/sacred/experiment.py\", line 318, in run_commandline\n    options=args,\n  File \"/home/levon/.local/lib/python3.6/site-packages/sacred/experiment.py\", line 276, in run\n    run()\n  File \"/home/levon/.local/lib/python3.6/site-packages/sacred/run.py\", line 238, in __call__\n    self.result = self.main_function(*args)\n  File \"/home/levon/.local/lib/python3.6/site-packages/sacred/config/captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n  File \"train.py\", line 114, in main\n    model.build()\n  File \"/home/levon/MyProjects/Paper_Reading/SemanticSegmentation/BiSeNet-V1/models/bisenet.py\", line 280, in build\n    self.build_bisenet(reuse=reuse)\n  File \"/home/levon/MyProjects/Paper_Reading/SemanticSegmentation/BiSeNet-V1/models/bisenet.py\", line 193, in build_bisenet\n    self.is_training(), reuse)\n  File \"/home/levon/MyProjects/Paper_Reading/SemanticSegmentation/BiSeNet-V1/builders/frontend_builder.py\", line 72, in build_frontend\n    logits, end_points = xception.xception39(inputs, is_training=is_training, scope='xception39', reuse=reuse)\n  File \"/home/levon/MyProjects/Paper_Reading/SemanticSegmentation/BiSeNet-V1/frontends/xception.py\", line 97, in xception39\n    return xception(inputs, layers, channels, is_training=is_training, reuse=reuse, scope=scope)\n  File \"/home/levon/MyProjects/Paper_Reading/SemanticSegmentation/BiSeNet-V1/frontends/xception.py\", line 77, in xception\n    net = slim.conv2d(inputs, 8, [3, 3], stride=2, padding='same', scope='pool1')\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/contrib/framework/python/ops/arg_scope.py\", line 182, in func_with_args\n    return func(*args, **current_args)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/contrib/layers/python/layers/layers.py\", line 1159, in convolution2d\n    conv_dims=2)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/contrib/framework/python/ops/arg_scope.py\", line 182, in func_with_args\n    return func(*args, **current_args)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/contrib/layers/python/layers/layers.py\", line 1057, in convolution\n    outputs = layer.apply(inputs)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/keras/engine/base_layer.py\", line 1479, in apply\n    return self.__call__(inputs, *args, **kwargs)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/layers/base.py\", line 537, in __call__\n    outputs = super(Layer, self).__call__(inputs, *args, **kwargs)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/keras/engine/base_layer.py\", line 634, in __call__\n    outputs = call_fn(inputs, *args, **kwargs)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/autograph/impl/api.py\", line 146, in wrapper\n    ), args, kwargs)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/autograph/impl/api.py\", line 446, in converted_call\n    return _call_unconverted(f, args, kwargs)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/autograph/impl/api.py\", line 253, in _call_unconverted\n    return f(*args, **kwargs)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/keras/layers/convolutional.py\", line 196, in call\n    outputs = self._convolution_op(inputs, self.kernel)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/ops/nn_ops.py\", line 1079, in __call__\n    return self.conv_op(inp, filter)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/ops/nn_ops.py\", line 635, in __call__\n    return self.call(inp, filter)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/ops/nn_ops.py\", line 234, in __call__\n    name=self.name)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/ops/nn_ops.py\", line 1953, in conv2d\n    name=name)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/ops/gen_nn_ops.py\", line 1071, in conv2d\n    data_format=data_format, dilations=dilations, name=name)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py\", line 788, in _apply_op_helper\n    op_def=op_def)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/util/deprecation.py\", line 507, in new_func\n    return func(*args, **kwargs)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/framework/ops.py\", line 3616, in create_op\n    op_def=op_def)\n  File \"/home/levon/.local/lib/python3.6/site-packages/tensorflow/python/framework/ops.py\", line 2005, in __init__\n    self._traceback = tf_stack.extract_stack()\n\n"
+  ],
+  "heartbeat": "2020-06-21T15:16:41.803851",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz",
+    "gpus": {
+      "driver_version": "440.64.00",
+      "gpus": [
+        {
+          "model": "GeForce RTX 2080 Ti",
+          "persistence_mode": true,
+          "total_memory": 11018
+        }
+      ]
+    },
+    "hostname": "levon-System-Product-Name",
+    "os": [
+      "Linux",
+      "Linux-4.15.0-106-generic-x86_64-with-Ubuntu-18.04-bionic"
+    ],
+    "python_version": "3.6.9"
+  },
+  "meta": {
+    "command": "main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2020-06-21T15:15:59.192820",
+  "status": "FAILED",
+  "stop_time": "2020-06-21T15:16:41.806774"
+}

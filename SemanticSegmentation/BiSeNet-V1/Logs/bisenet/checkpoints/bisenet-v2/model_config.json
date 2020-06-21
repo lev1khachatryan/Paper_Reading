@@ -1,0 +1,22 @@
+{
+  "frontend_config": {
+    "frontend": "Xception39",
+    "pretrained_dir": "pretrain",
+    "train_frontend": true,
+    "use_bn": true,
+    "bn_scale": true,
+    "bn_momentum": 0.05,
+    "bn_epsilon": 1e-06,
+    "weight_decay": 0.0005,
+    "stride": 8
+  },
+  "conv_config": {
+    "init_method": "kaiming_normal"
+  },
+  "batch_norm_params": {
+    "scale": true,
+    "decay": 0.9,
+    "epsilon": 1e-05,
+    "updates_collections": "update_ops"
+  }
+}

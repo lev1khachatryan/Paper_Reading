@@ -1,0 +1,82 @@
+{
+  "model_config": {
+    "batch_norm_params": {
+      "decay": 0.9,
+      "epsilon": 1e-05,
+      "scale": true,
+      "updates_collections": "update_ops"
+    },
+    "conv_config": {
+      "init_method": "kaiming_normal"
+    },
+    "frontend_config": {
+      "bn_epsilon": 1e-06,
+      "bn_momentum": 0.05,
+      "bn_scale": true,
+      "frontend": "Xception39",
+      "pretrained_dir": "pretrain",
+      "stride": 8,
+      "train_frontend": true,
+      "use_bn": true,
+      "weight_decay": 0.0005
+    }
+  },
+  "seed": 473035677,
+  "train_config": {
+    "DataSet": "CamVid",
+    "class_dict": "./CamVid/class_dict.csv",
+    "clip_gradients": null,
+    "log_every_n_steps": 10,
+    "lr_config": {
+      "initial_lr": 0.01,
+      "lr_decay_factor": 0.8685113737513527,
+      "num_epochs_per_decay": 1,
+      "policy": "polynomial",
+      "power": 0.9,
+      "staircase": true
+    },
+    "max_checkpoints_to_keep": 20,
+    "optimizer_config": {
+      "decay": 0.9,
+      "momentum": 0.9,
+      "optimizer": "MOMENTUM",
+      "use_nesterov": false
+    },
+    "save_model_every_n_step": 52,
+    "seed": 123,
+    "test_data_config": {
+      "batch_size": 8,
+      "crop_h": 736,
+      "crop_w": 960,
+      "input_dir": "test",
+      "num_examples_per_epoch": 421,
+      "output_dir": "test_labels",
+      "prefetch_threads": 4,
+      "preprocessing_name": "None",
+      "test_dir": "Logs/bisenet/checkpoints/bisenet-v2test"
+    },
+    "train_data_config": {
+      "batch_size": 8,
+      "crop_h": 800,
+      "crop_w": 800,
+      "epoch": 2000,
+      "input_dir": "train",
+      "num_examples_per_epoch": 421,
+      "output_dir": "train_labels",
+      "prefetch_threads": 8,
+      "preprocessing_name": "augment",
+      "random_mirror": true,
+      "random_scale": true
+    },
+    "train_dir": "Logs/bisenet/checkpoints/bisenet-v2",
+    "validation_data_config": {
+      "batch_size": 2,
+      "crop_h": 736,
+      "crop_w": 960,
+      "input_dir": "val",
+      "output_dir": "val_labels",
+      "prefetch_threads": 4,
+      "preprocessing_name": "None"
+    }
+  }
+}

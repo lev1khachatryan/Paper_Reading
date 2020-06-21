@@ -1,0 +1,135 @@
+{
+  "artifacts": [],
+  "command": "main",
+  "experiment": {
+    "base_dir": "/home/levon/MyProjects/Paper_Reading/SemanticSegmentation/BiSeNet-V1",
+    "dependencies": [
+      "numpy==1.18.5",
+      "sacred==0.8.1",
+      "tensorflow-gpu==1.14.0"
+    ],
+    "mainfile": "train.py",
+    "name": "bisenet-v2",
+    "repositories": [
+      {
+        "commit": "2a3d86ea451d50b116be2c86095cfa1048be34d7",
+        "dirty": false,
+        "url": "https://github.com/lev1khachatryan/Paper_Reading.git"
+      },
+      {
+        "commit": "2a3d86ea451d50b116be2c86095cfa1048be34d7",
+        "dirty": false,
+        "url": "https://github.com/lev1khachatryan/Paper_Reading.git"
+      },
+      {
+        "commit": "2a3d86ea451d50b116be2c86095cfa1048be34d7",
+        "dirty": false,
+        "url": "https://github.com/lev1khachatryan/Paper_Reading.git"
+      },
+      {
+        "commit": "2a3d86ea451d50b116be2c86095cfa1048be34d7",
+        "dirty": false,
+        "url": "https://github.com/lev1khachatryan/Paper_Reading.git"
+      },
+      {
+        "commit": "2a3d86ea451d50b116be2c86095cfa1048be34d7",
+        "dirty": false,
+        "url": "https://github.com/lev1khachatryan/Paper_Reading.git"
+      },
+      {
+        "commit": "2a3d86ea451d50b116be2c86095cfa1048be34d7",
+        "dirty": false,
+        "url": "https://github.com/lev1khachatryan/Paper_Reading.git"
+      }
+    ],
+    "sources": [
+      [
+        "configuration.py",
+        "_sources/configuration_bbc54a1a23473406fdb54479dbdc005c.py"
+      ],
+      [
+        "models/__init__.py",
+        "_sources/__init___d41d8cd98f00b204e9800998ecf8427e.py"
+      ],
+      [
+        "models/bisenet.py",
+        "_sources/bisenet_04d158f7092d6f119c3e85ce9b1bd7df.py"
+      ],
+      [
+        "train.py",
+        "_sources/train_eda6b51e713f4ecd16d114b46af71347.py"
+      ],
+      [
+        "utils/__init__.py",
+        "_sources/__init___d41d8cd98f00b204e9800998ecf8427e.py"
+      ],
+      [
+        "utils/misc_utils.py",
+        "_sources/misc_utils_5c23b9776c7ad6c2b61497e4efdf3d47.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/home/levon/.local/lib/python3.6/site-packages/sacred/config/captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"train.py\", line 111, in main\n    model.build()\n",
+    "  File \"/home/levon/MyProjects/Paper_Reading/SemanticSegmentation/BiSeNet-V1/models/bisenet.py\", line 282, in build\n    self.build_bisenet(reuse=reuse)\n",
+    "  File \"/home/levon/MyProjects/Paper_Reading/SemanticSegmentation/BiSeNet-V1/models/bisenet.py\", line 228, in build_bisenet\n    exit()\n",
+    "  File \"/usr/lib/python3.6/_sitebuiltins.py\", line 26, in __call__\n    raise SystemExit(code)\n",
+    "SystemExit: None\n"
+  ],
+  "heartbeat": "2020-06-21T16:57:03.191070",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz",
+    "gpus": {
+      "driver_version": "440.64.00",
+      "gpus": [
+        {
+          "model": "GeForce RTX 2080 Ti",
+          "persistence_mode": true,
+          "total_memory": 11018
+        }
+      ]
+    },
+    "hostname": "levon-System-Product-Name",
+    "os": [
+      "Linux",
+      "Linux-4.15.0-106-generic-x86_64-with-Ubuntu-18.04-bionic"
+    ],
+    "python_version": "3.6.9"
+  },
+  "meta": {
+    "command": "main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2020-06-21T16:56:57.574740",
+  "status": "FAILED",
+  "stop_time": "2020-06-21T16:57:03.191988"
+}
