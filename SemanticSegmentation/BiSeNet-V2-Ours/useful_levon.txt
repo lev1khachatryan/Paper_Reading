@@ -1,0 +1,11 @@
+python3 tools/mixed_8K/evaluate_bisenetv2_mixed_8K.py --pb_file_path ./checkpoint/bisenetv2_mixed_8K_frozen.pb --dataset_dir ./data/example_dataset/mixed_8K/
+
+python3 tools/mixed_8K/test_bisenetv2_mixed_8K.py --weights_path model/mixed_8K/bisenetv2/mixed_8K_train_miou\=0.7926.ckpt-400 --src_image_path ./data/test_image/mixed_8K/1.jpg
+
+python3 tools/celebamask_hq/test_bisenetv2_celebamaskhq.py --weights_path model/celebamaskhq/bisenetv2/celebamaskhq.ckpt --src_image_path ./data/test_image/celebamask_hq/test_01.jpg
+
+
+I converted my images to 1024x1024, masks to 512x512 (where class of each pixel is int, so we have 512x512 rather than 512x512x3), then created tfrecords
+
+Pretrained models:
+https://drive.google.com/drive/folders/1MgAyP2oDp43rFBN21tbXiXxOMbvpS7Bk?usp=sharing
